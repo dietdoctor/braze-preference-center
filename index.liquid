@@ -1,6 +1,8 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+  <meta name="robots" content="noindex">
   <title>Diet Doctor Communication Preference Center</title>
   <link href='https://fonts.googleapis.com/css2?family=Inter&display=swap' rel='stylesheet'>
   <style>
@@ -14,7 +16,7 @@
   </style>
 </head>
 
-<body style='max-width: 960px; margin: 0 auto;'>
+<body style='max-width: 960px; margin: 0 auto; padding: 1rem;'>
 
   <svg width='48' height='64' viewBox='0 0 48 64' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
@@ -27,25 +29,32 @@
 
   <h1>Diet Doctor Communication Preference Center</h1>
 
-  <form action='{{preference_center_submit_url}}' method='POST'>
+  <form action='{{preference_center_submit_url}}' method='POST' accept-charset="UTF-8">
     <h2>Email Preferences</h2>
 
     {% if subscribed_state.${email_global} == 'subscribed' or subscribed_state.${email_global} == 'opted_in' %}
-    <input type='checkbox' id='email_global' name='{% form_field_name :email_global_state %}' checked>
+    <input type='checkbox' id='email_global' name='{% form_field_name :email_global_state %}' value="true" checked>
     {% else %}
-    <input type='checkbox' id='email_global' name='{% form_field_name :email_global_state %}'>
+    <input type='checkbox' id='email_global' name='{% form_field_name :email_global_state %}' value="false">
     {% endif %}
-    <label for='email_global'>Subscribe to emails</label>
+    <label for='email_global'>
+      <b>Subscribe to emails</b>
+    </label>
 
     <br>
+
     <br>
+
     <div>
       email_global:
       <code>{{ subscribed_state.${email_global }}}</code>
     </div>
+
     <br>
+
     <br>
-    <input type='submit' value='Submit' style='font-size: 1.75rem'>
+
+    <input type='submit' value='Save' style='font-size: 1.6rem'>
   </form>
 </body>
 

@@ -1,8 +1,7 @@
 # braze-preference-center
-Liquid
 
+### Liquid
 
-https://www.willpeavy.com/tools/minifier/
+- https://www.willpeavy.com/tools/minifier/
 
-
-https://www.braze.com/docs/api/endpoints/preference_center
+- https://www.braze.com/docs/api/endpoints/preference_center
