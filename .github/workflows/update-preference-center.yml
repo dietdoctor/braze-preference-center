@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@v1
+
+    - name: Read code
+      id: read_file
+      uses: andstor/file-reader-action@v1
+      with:
+        path: "index.html.min"
+
+    - name: Deploy
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: 'https://rest.iad-05.braze.com/preference_center/v1/c9f0b3d9-af6f-4825-a4e8-277ad8e43df6'
+        method: 'PUT'
+        customHeaders: '{"Content-Type": "application/json", "Authorization": "Bearer ${{ secrets.API_KEY }}"}'
+        data: '{ "name": "preference_center_name", "preference_center_title": "Diet Doctor", "preference_center_page_html": "${ steps.read_file.outputs.contents }", "confirmation_page_html": "Hopefully submitted correctly :)" }'

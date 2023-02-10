@@ -1,0 +1,30 @@
+{
+  "name": "braze-preference-center",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify": "minify index.html > index.html.min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dietdoctor/braze-preference-center.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dietdoctor/braze-preference-center/issues"
+  },
+  "homepage": "https://github.com/dietdoctor/braze-preference-center#readme",
+  "devDependencies": {
+    "lint-staged": "^13.1.1",
+    "minify": "^9.2.0",
+    "simple-git-hooks": "^2.8.1"
+  },
+  "lint-staged": {
+    "./*.html": "npm run minify"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run lint-staged"
+  }
+}
