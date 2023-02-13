@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "postinstall": "npx simple-git-hooks",
-    "minify": "minify index.html > index.html.min"
+    "minify": "minify index.html | tr -d '\n' > index.html.min"
   },
   "repository": {
     "type": "git",
