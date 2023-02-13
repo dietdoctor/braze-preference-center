@@ -52,18 +52,18 @@
     <input type='submit' value='Save' style='font-size: 1.6rem'>
   </form>
 </body>
+
 <script>
   var global_status = '{{ subscribed_state.${email_global} }}';
 
   if (global_status == 'subscribed' || global_status == 'opted_in') {
-    document.getElementById('email_global').checked = 'true';
+    document.getElementById('email_global').checked = true;
     document.getElementById('email_global').value = 'subscribed';
   } else {
-    document.getElementById('email_global').checked = 'false';
+    document.getElementById('email_global').checked = false;
     document.getElementById('email_global').value = 'unsubscribed';
   }
-</script>
-<script>
+
   function updateValue(checkbox) {
     if (checkbox.checked) {
       checkbox.value = 'subscribed';
