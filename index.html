@@ -14,6 +14,12 @@
       transform: scale(1.5);
     }
   </style>
+  <script>
+    const global_status = '{{subscribed_state.${email_global}}}';
+    if (global_status === 'subscribed') {
+      document.getElementById('email_global_state').checked = true;
+    }
+  </script>
 </head>
 
 <body style='max-width: 960px; margin: 0 auto; padding: 1rem;'>
@@ -32,12 +38,8 @@
   <form action='{{preference_center_submit_url}}' method='POST' accept-charset='UTF-8'>
     <h2>Email Preferences</h2>
 
-    {% if subscribed_state.${email_global} == 'subscribed' or subscribed_state.${email_global} == 'opted_in' %}
-    <input type='checkbox' id='email_global' name='{% form_field_name :email_global_state %}' value='true' checked>
-    {% else %}
-    <input type='checkbox' id='email_global' name='{% form_field_name :email_global_state %}' value='false'>
-    {% endif %}
-    <label for='email_global'>
+    <input type='checkbox' id='email_global_state' name='{% form_field_name :email_global_state %}'>
+    <label for='email_global_state'>
       <b>Subscribe to emails</b>
     </label>
 
