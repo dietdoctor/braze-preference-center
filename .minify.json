@@ -2,7 +2,9 @@
   "html": {
     "quoteCharacter": "'",
     "minifyJS": {
-      "compress": {},
+      "compress": {
+        "booleans": false
+      },
       "mangle": false,
       "output": {
         "quote_style": 1
