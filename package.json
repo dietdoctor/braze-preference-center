@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npx simple-git-hooks",
     "minify": "minify index.html > index.html.min"
   },
   "repository": {
@@ -21,6 +21,6 @@
     "simple-git-hooks": "^2.8.1"
   },
   "simple-git-hooks": {
-    "pre-push": "npm run minify"
+    "pre-commit": "npm run minify"
   }
 }
