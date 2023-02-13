@@ -18,11 +18,11 @@
     var global_status = '{{ subscribed_state.${email_global} }}';
 
     if (global_status == 'subscribed' || global_status == 'opted_in') {
-      document.getElementById('email_global').checked = "true";
-      document.getElementById('email_global').value = 'subscribed';
+      document.querySelector('#email_global').checked = true;
+      document.querySelector('#email_global').value = 'subscribed';
     } else {
-      document.getElementById('email_global').checked = "false";
-      document.getElementById('email_global').value = 'unsubscribed';
+      document.querySelector('#email_global').checked = false;
+      document.querySelector('#email_global').value = 'unsubscribed';
     }
 
     function updateValue(checkbox) {
