@@ -17,10 +17,11 @@
   },
   "homepage": "https://github.com/dietdoctor/braze-preference-center#readme",
   "devDependencies": {
+    "lint-staged": "^13.1.2",
     "minify": "^9.2.0",
     "simple-git-hooks": "^2.8.1"
   },
   "simple-git-hooks": {
-    "pre-commit": "npm run minify"
+    "pre-push": "npm run minify"
   }
 }
