@@ -16,7 +16,7 @@
   </style>
   <script>
     const global_status = '{{subscribed_state.${email_global}}}';
-    if (global_status === 'subscribed') {
+    if (global_status === 'subscribed' || global_status === 'opted_in') {
       document.getElementById('email_global_state').checked = true;
     }
   </script>
@@ -54,7 +54,6 @@
 
     <br>
 
-    <br>
     <br>
 
     <input type='submit' value='Save' style='font-size: 1.6rem'>
