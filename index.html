@@ -15,9 +15,22 @@
     }
   </style>
   <script>
-    const global_status = '{{subscribed_state.${email_global}}}';
+    const global_status = '{{ subscribed_state.${email_global} }}';
+
     if (global_status === 'subscribed' || global_status === 'opted_in') {
-      document.getElementById('email_global_state').checked = true;
+      document.getElementById('email_global').checked = true;
+      document.getElementById('email_global').value = 'subscribed';
+    } else {
+      document.getElementById('email_global').checked = false;
+      document.getElementById('email_global').value = 'unsubscribed';
+    }
+
+    function updateValue(checkbox) {
+      if (checkbox.checked) {
+        checkbox.value = 'subscribed';
+      } else {
+        checkbox.value = 'unsubscribed';
+      }
     }
   </script>
 </head>
@@ -38,13 +51,13 @@
   <form action='{{preference_center_submit_url}}' method='POST' accept-charset='UTF-8'>
     <h2>Email Preferences</h2>
 
-    <input type='checkbox' id='email_global_state' name='{% form_field_name :email_global_state %}'>
-    <label for='email_global_state'>
+    <input type='checkbox' id='email_global' name='{% form_field_name :email_global_state %}'
+      onchange='updateValue(this)'>
+    <label for='email_global'>
       <b>Subscribe to emails</b>
     </label>
 
     <br>
-
     <br>
 
     <div>
@@ -53,7 +66,6 @@
     </div>
 
     <br>
-
     <br>
 
     <input type='submit' value='Save' style='font-size: 1.6rem'>
