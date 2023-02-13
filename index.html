@@ -14,26 +14,6 @@
       transform: scale(1.5);
     }
   </style>
-  <script>
-    var global_status = '{{ subscribed_state.${email_global} }}';
-
-    if (global_status == 'subscribed' || global_status == 'opted_in') {
-      document.querySelector('#email_global').checked = true;
-      document.querySelector('#email_global').value = 'subscribed';
-    } else {
-      document.querySelector('#email_global').checked = false;
-      document.querySelector('#email_global').value = 'unsubscribed';
-    }
-  </script>
-  <script>
-    function updateValue(checkbox) {
-      if (checkbox.checked) {
-        checkbox.value = 'subscribed';
-      } else {
-        checkbox.value = 'unsubscribed';
-      }
-    }
-  </script>
 </head>
 
 <body style='max-width: 960px; margin: 0 auto; padding: 1rem;'>
@@ -72,5 +52,25 @@
     <input type='submit' value='Save' style='font-size: 1.6rem'>
   </form>
 </body>
+<script>
+  var global_status = '{{ subscribed_state.${email_global} }}';
+
+  if (global_status == 'subscribed' || global_status == 'opted_in') {
+    document.getElementById('email_global').checked = true;
+    document.getElementById('email_global').value = 'subscribed';
+  } else {
+    document.getElementById('email_global').checked = false;
+    document.getElementById('email_global').value = 'unsubscribed';
+  }
+</script>
+<script>
+  function updateValue(checkbox) {
+    if (checkbox.checked) {
+      checkbox.value = 'subscribed';
+    } else {
+      checkbox.value = 'unsubscribed';
+    }
+  }
+</script>
 
 </html>
