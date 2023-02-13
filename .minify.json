@@ -1,5 +1,12 @@
 {
   "html": {
-    "quoteCharacter": "'"
+    "quoteCharacter": "'",
+    "minifyJS": {
+      "compress": {},
+      "mangle": false,
+      "output": {
+        "quote_style": 1
+      }
+    }
   }
 }

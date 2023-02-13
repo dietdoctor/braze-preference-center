@@ -15,9 +15,9 @@
     }
   </style>
   <script>
-    const global_status = '{{ subscribed_state.${email_global} }}';
+    var global_status = '{{ subscribed_state.${email_global} }}';
 
-    if (global_status === 'subscribed' || global_status === 'opted_in') {
+    if (global_status == 'subscribed' || global_status == 'opted_in') {
       document.getElementById('email_global').checked = true;
       document.getElementById('email_global').value = 'subscribed';
     } else {
