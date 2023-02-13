@@ -17,6 +17,7 @@ jobs:
       uses: juliangruber/read-file-action@v1.1.6
       with:
         path: "index.html.min"
+        trim: true
 
     - name: Echo package.json
       run: '{ "name": "preference_center_name", "preference_center_title": "Diet Doctor", "preference_center_page_html": "${{ steps.read_file.outputs.content }}", "confirmation_page_html": "Hopefully submitted correctly :)" }'
