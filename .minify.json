@@ -2,10 +2,12 @@
   "html": {
     "quoteCharacter": "'",
     "minifyJS": {
-      "compress": {
-        "booleans": false
-      },
       "mangle": false,
+      "compress": {
+        "booleans": false,
+        "keep_fnames": true,
+        "keep_fargs": true
+      },
       "output": {
         "quote_style": 1
       }
