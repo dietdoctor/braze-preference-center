@@ -22,6 +22,6 @@
     "simple-git-hooks": "^2.8.1"
   },
   "simple-git-hooks": {
-    "pre-push": "npm run minify"
+    "pre-commit": "npm run minify"
   }
 }
