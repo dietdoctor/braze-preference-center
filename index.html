@@ -30,7 +30,7 @@
   <h1>Diet Doctor Communication Preference Center</h1>
 
   <!-- Select -->
-  <!-- <form method="post" action="{{preference_center_submit_url}}">
+  <form method="post" action="{{preference_center_submit_url}}">
     <select id="global" name="{% form_field_name :email_global_state %}">
       <option value="subscribed">Subscribed</option>
       <option value="unsubscribed">Unsubscribed</option>
@@ -38,11 +38,11 @@
     </select>
     <label for="global">Global Subscription State</label>
     <input type="submit" value="Submit">
-  </form> -->
+  </form>
 
 
   <!-- Checkbox -->
-  <form action='{{preference_center_submit_url}}' method='POST' accept-charset='UTF-8'>
+  <!-- <form action='{{preference_center_submit_url}}' method='POST' accept-charset='UTF-8'>
     <h2>Email Preferences</h2>
 
     <fieldset name='{% form_field_name :email_global_state %}'>
@@ -64,7 +64,7 @@
     <br>
 
     <input type='submit' value='Save' style='font-size: 1.6rem'>
-  </form>
+  </form> -->
 </body>
 
 <script>
