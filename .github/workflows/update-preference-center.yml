@@ -25,4 +25,4 @@ jobs:
         url: 'https://rest.iad-05.braze.com/preference_center/v1/c9f0b3d9-af6f-4825-a4e8-277ad8e43df6'
         method: 'PUT'
         customHeaders: '{"Content-Type": "application/json", "Authorization": "Bearer ${{ secrets.API_KEY }}"}'
-        data: '{ "name": "preference_center_name", "preference_center_title": "Diet Doctor", "preference_center_page_html": "${{ steps.read_file.outputs.content }}", "confirmation_page_html": "Hopefully submitted correctly :)" }'
+        data: '{ "name": "preference_center_name", "preference_center_title": "Diet Doctor", "preference_center_page_html": "${{ steps.read_file.outputs.content }}", "confirmation_page_html": "<h2>Preferences submitted successfully!</h2><p>Your communication preferences have been saved. Thank you for updating your preferences.</p>" }'
