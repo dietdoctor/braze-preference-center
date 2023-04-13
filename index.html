@@ -31,20 +31,20 @@
 
   <form method="post" action="{{preference_center_submit_url}}">
 
-    <div style="display: flex; flex-direction: column;">
+    <ul style="display: flex; flex-direction: column;">
 
       <!-- Global -->
-      <div
+      <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="global">Global Subscription State: </label>
         <select id="global" name="{% form_field_name :email_global_state %}">
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
-      </div>
+      </li>
 
       <!-- English -->
-      <div
+      <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="english_newsletter">English - Newsletter: </label>
         <select id="english_newsletter"
@@ -52,9 +52,9 @@
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
-      </div>
+      </li>
 
-      <div
+      <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="english_program_diabetes">English - Program - Diabetes: </label>
         <select id="english_program_diabetes"
@@ -62,9 +62,9 @@
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
-      </div>
+      </li>
 
-      <div
+      <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="english_program_new_me_reset">English - Program - New Me Reset: </label>
         <select id="english_program_new_me_reset"
@@ -72,10 +72,10 @@
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
-      </div>
+        </div>
 
-      <!-- Swedish -->
-      <div
+        <!-- Swedish -->
+      <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="swedish_newsletter">Swedish (Svenska) - Newsletter (Nyhetsbrev): </label>
         <select id="swedish_newsletter"
@@ -83,9 +83,9 @@
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
-      </div>
+        </div>
 
-      <div
+      <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="swedish_program_diabetes">Swedish (Svenska) - Program - Diabetes: </label>
         <select id="swedish_program_diabetes"
@@ -93,10 +93,10 @@
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
-      </div>
+        </div>
 
-      <!-- Spanish -->
-      <div
+        <!-- Spanish -->
+      <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="spanish_newsletter">Spanish - Newsletter: </label>
         <select id="spanish_newsletter"
@@ -104,9 +104,9 @@
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
-      </div>
+      </li>
 
-    </div>
+    </ul>
 
     <input type="submit" value="Submit" style='font-size: 1.6rem'>
     <br>
@@ -122,8 +122,10 @@
     if (element) {
       if (status === 'subscribed' || status === 'opted_in') {
         element.value = 'opted_in';
+        element.checked = true;
       } else {
         element.value = 'unsubscribed';
+        element.checked = false;
       }
     } else {
       console.error('Element not found:', elementId);
