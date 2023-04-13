@@ -118,11 +118,16 @@
 
     var element = document.getElementById(elementId);
 
-    if (status === 'subscribed' || status === 'opted_in') {
-      element.value = 'subscribed';
+    if (element) {
+      if (status === 'subscribed' || status === 'opted_in') {
+        element.value = 'subscribed';
+      } else {
+        element.value = 'unsubscribed';
+      }
     } else {
-      element.value = 'unsubscribed';
+      console.error('Element not found:', elementId);
     }
+
   }
 
   // Global
