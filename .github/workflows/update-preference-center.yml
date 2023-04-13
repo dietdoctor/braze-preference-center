@@ -32,4 +32,4 @@ jobs:
         url: 'https://rest.iad-05.braze.com/preference_center/v1/c9f0b3d9-af6f-4825-a4e8-277ad8e43df6'
         method: 'PUT'
         customHeaders: '{"Content-Type": "application/json", "Authorization": "Bearer ${{ secrets.API_KEY }}"}'
-        data: '{ "name": "preference_center_name", "preference_center_title": "Diet Doctor", "preference_center_page_html": "${{ steps.read_file_center.outputs.content }}", "confirmation_page_html": "${{ steps.read_file_confirm.outputs.content }}" }'
+        data: '{ "name": "preference_center_name", "preference_center_title": "Diet Doctor", "preference_center_page_html": "${{ steps.read_file_center.outputs.content }}", "confirmation_page_html": "${{ steps.read_file_confirm.outputs.content }}", "options": { "meta-viewport-content": "width=device-width, initial-scale=1.0" } }'
