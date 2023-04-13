@@ -16,7 +16,7 @@
   </style>
 </head>
 
-<body style='max-width: 375px; margin: 0 auto; padding: 1rem;'>
+<body style='max-width: 640px; margin: 0 auto; padding: 1rem;'>
 
   <svg width='48' height='64' viewBox='0 0 48 64' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
@@ -34,7 +34,7 @@
     <div style="display: flex; flex-direction: column;">
 
       <!-- English -->
-      <div style="display: flex; flex-direction: row; justify-items: center;">
+      <div style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between;">
         <label for="english_newsletter">English - Newsletter: </label>
         <select id="english_newsletter"
           name="{% form_field_name :subscription_group 84e6f8c3-a99a-4da8-9e16-9207785a7a44 %}">
@@ -43,7 +43,8 @@
         </select>
       </div>
 
-      <div style="display: flex; flex-direction: row; justify-items: center;">
+      <div
+        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="english_newsletter">English - Program - Diabetes: </label>
         <select id="english_newsletter"
           name="{% form_field_name :subscription_group 3d5e83eb-bbbe-4f92-b7ad-a1e1f82d7129 %}">
@@ -52,7 +53,8 @@
         </select>
       </div>
 
-      <div style="display: flex; flex-direction: row; justify-items: center;">
+      <div
+        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="english_program_new_me_reset">English - Program - New Me Reset: </label>
         <select id="english_program_new_me_reset"
           name="{% form_field_name :subscription_group 42ea2104-2eee-4be0-a205-6d1261c60a8e %}">
@@ -62,7 +64,8 @@
       </div>
 
       <!-- Swedish -->
-      <div style="display: flex; flex-direction: row; justify-items: center;">
+      <div
+        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="swedish_newsletter">Swedish (Svenska) - Newsletter (Nyhetsbrev): </label>
         <select id="swedish_newsletter"
           name="{% form_field_name :subscription_group c25c484c-7848-4a94-91e3-31619e656c69 %}">
@@ -71,7 +74,8 @@
         </select>
       </div>
 
-      <div style="display: flex; flex-direction: row; justify-items: center;">
+      <div
+        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="swedish_program_diabetes">Swedish (Svenska) - Program - Diabetes: </label>
         <select id="swedish_program_diabetes"
           name="{% form_field_name :subscription_group c25c484c-7848-4a94-91e3-31619e656c69 %}">
@@ -81,7 +85,8 @@
       </div>
 
       <!-- Spanish -->
-      <div style="display: flex; flex-direction: row; justify-items: center;">
+      <div
+        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="spanish_newsletter">Spanish - Newsletter: </label>
         <select id="spanish_newsletter"
           name="{% form_field_name :subscription_group 552354e8-2192-4bbc-b3eb-83723be5c183 %}">
@@ -91,7 +96,8 @@
       </div>
 
       <!-- Global -->
-      <div style="display: flex; flex-direction: row; justify-items: center;">
+      <div
+        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="global">Global Subscription State: </label>
         <select id="global" name="{% form_field_name :email_global_state %}">
           <option value="subscribed">Subscribed</option>
@@ -108,7 +114,7 @@
 
 <script>
   function updateSubscriptionStatus(elementId, subscriptionId) {
-    var status = '{{ subscribed_state.' + subscriptionId + ' }}';
+    var status = '{{ subscribed_state.${' + subscriptionId + '} }}';
     var element = document.getElementById(elementId);
 
     if (status === 'subscribed' || status === 'opted_in') {
