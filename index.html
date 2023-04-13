@@ -44,10 +44,9 @@
       </li> -->
 
       <li>
-        <fieldset name='{% form_field_name :email_global_state %}'>
-          <label for="email_global">Global Subscription State: </label>
-          <input type='checkbox' id='email_global' onchange='updateValue(this)'>
-        </fieldset>
+        <label for="email_global">Global Subscription State: </label>
+        <input type='checkbox' id='email_global' onchange='updateValue(this)'
+          name='{% form_field_name :email_global_state %}'>
       </li>
 
       <!-- English -->
