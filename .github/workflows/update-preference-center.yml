@@ -12,11 +12,18 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v1
 
-    - name: Read code
-      id: read_file
+    - name: Read preference center code
+      id: read_file_center
       uses: juliangruber/read-file-action@v1.1.6
       with:
         path: "index.html.min"
+        trim: true
+
+    - name: Read submit confirmation code
+      id: read_file_confirm
+      uses: juliangruber/read-file-action@v1.1.6
+      with:
+        path: "confirmation.html.min"
         trim: true
 
     - name: Deploy
@@ -25,4 +32,4 @@ jobs:
         url: 'https://rest.iad-05.braze.com/preference_center/v1/c9f0b3d9-af6f-4825-a4e8-277ad8e43df6'
         method: 'PUT'
         customHeaders: '{"Content-Type": "application/json", "Authorization": "Bearer ${{ secrets.API_KEY }}"}'
-        data: '{ "name": "preference_center_name", "preference_center_title": "Diet Doctor", "preference_center_page_html": "${{ steps.read_file.outputs.content }}", "confirmation_page_html": "<h2>Preferences submitted successfully!</h2><p>Your Diet Doctor communication preferences have been saved. Thank you for updating your preferences.</p><a href="https://www.dietdoctor.com/" style="font-size: 1.6rem">Click here to return to https://www.dietdoctor.com/</a>" }'
+        data: '{ "name": "preference_center_name", "preference_center_title": "Diet Doctor", "preference_center_page_html": "${{ steps.read_file_center.outputs.content }}", "confirmation_page_html": "${{ steps.read_file_confirm.outputs.content }}" }'
