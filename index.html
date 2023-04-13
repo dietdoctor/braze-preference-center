@@ -36,8 +36,8 @@
       <!-- Global -->
       <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
-        <label for="global">Global Subscription State: </label>
-        <select id="global" name="{% form_field_name :email_global_state %}">
+        <label for="email_global">Global Subscription State: </label>
+        <select id="email_global" name="{% form_field_name :email_global_state %}">
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
@@ -111,6 +111,17 @@
     <input type="submit" value="Submit" style='font-size: 1.6rem'>
     <br>
   </form>
+
+  <div>
+    email_global:
+    <code>{{ subscribed_state.${email_global} }}</code>
+
+    swedish_newsletter:
+    <code>{{ subscribed_state.${c25c484c-7848-4a94-91e3-31619e656c69} }}</code>
+
+  </div>
+
+
 </body>
 
 <script>
@@ -134,7 +145,7 @@
   }
 
   // Global
-  updateSubscriptionStatus('global', 'email_global_state');
+  updateSubscriptionStatus('email_global', 'email_global');
 
   // English
   updateSubscriptionStatus('english_newsletter', '84e6f8c3-a99a-4da8-9e16-9207785a7a44');
