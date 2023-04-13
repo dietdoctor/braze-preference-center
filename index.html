@@ -128,6 +128,10 @@
   function updateSubscriptionStatus(elementId, subscriptionId) {
     var status = '{{ subscribed_state.${' + subscriptionId + '} }}';
 
+    console.log("elementId", elementId)
+    console.log("subscriptionId", subscriptionId)
+    console.log("status", status)
+
     var element = document.getElementById(elementId);
 
     if (element) {
