@@ -43,10 +43,11 @@
         </select>
       </li> -->
 
-      <li>
+      <li
+        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;"
+        name='{% form_field_name :email_global_state %}'>
         <label for="email_global">Global Subscription State: </label>
-        <input type='checkbox' id='email_global' onchange='updateValue(this)'
-          name='{% form_field_name :email_global_state %}'>
+        <input type='checkbox' id='email_global' onchange='updateValue(this)'>
       </li>
 
       <!-- English -->
