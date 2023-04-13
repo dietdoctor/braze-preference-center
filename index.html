@@ -33,6 +33,16 @@
 
     <div style="display: flex; flex-direction: column;">
 
+      <!-- Global -->
+      <div
+        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
+        <label for="global">Global Subscription State: </label>
+        <select id="global" name="{% form_field_name :email_global_state %}">
+          <option value="subscribed">Subscribed</option>
+          <option value="unsubscribed">Unsubscribed</option>
+        </select>
+      </div>
+
       <!-- English -->
       <div style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between;">
         <label for="english_newsletter">English - Newsletter: </label>
@@ -45,8 +55,8 @@
 
       <div
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
-        <label for="english_newsletter">English - Program - Diabetes: </label>
-        <select id="english_newsletter"
+        <label for="english_program_diabetes">English - Program - Diabetes: </label>
+        <select id="english_program_diabetes"
           name="{% form_field_name :subscription_group 3d5e83eb-bbbe-4f92-b7ad-a1e1f82d7129 %}">
           <option value="subscribed">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
@@ -78,7 +88,7 @@
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="swedish_program_diabetes">Swedish (Svenska) - Program - Diabetes: </label>
         <select id="swedish_program_diabetes"
-          name="{% form_field_name :subscription_group c25c484c-7848-4a94-91e3-31619e656c69 %}">
+          name="{% form_field_name :subscription_group b0907bac-b00c-4834-99b3-35d42445c496 %}">
           <option value="subscribed">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
@@ -95,16 +105,6 @@
         </select>
       </div>
 
-      <!-- Global -->
-      <div
-        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
-        <label for="global">Global Subscription State: </label>
-        <select id="global" name="{% form_field_name :email_global_state %}">
-          <option value="subscribed">Subscribed</option>
-          <option value="unsubscribed">Unsubscribed</option>
-        </select>
-      </div>
-
     </div>
 
     <input type="submit" value="Submit" style='font-size: 1.6rem'>
@@ -115,6 +115,7 @@
 <script>
   function updateSubscriptionStatus(elementId, subscriptionId) {
     var status = '{{ subscribed_state.${' + subscriptionId + '} }}';
+
     var element = document.getElementById(elementId);
 
     if (status === 'subscribed' || status === 'opted_in') {
@@ -125,7 +126,7 @@
   }
 
   // Global
-  updateSubscriptionStatus('email_global', 'email_global');
+  updateSubscriptionStatus('global', 'email_global_state');
 
   // English
   updateSubscriptionStatus('english_newsletter', '84e6f8c3-a99a-4da8-9e16-9207785a7a44');
