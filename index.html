@@ -29,7 +29,7 @@
 
   <h1>Diet Doctor - Communication Preference Center</h1>
 
-  <form method="post" action="{{preference_center_submit_url}}">
+  <form action="{{preference_center_submit_url}}" method='POST' accept-charset='UTF-8'>
 
     <ul style="display: flex; flex-direction: column; padding: 0;">
 
@@ -41,6 +41,15 @@
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
+      </li>
+
+      <li>
+        <fieldset name='{% form_field_name :email_global_state %}'>
+          <input type='checkbox' id='email_global' onchange='updateValue(this)'>
+          <label for='email_global'>
+            <b>Subscribe to all emails</b>
+          </label>
+        </fieldset>
       </li>
 
       <!-- English -->
@@ -159,6 +168,14 @@
 
   // Spanish
   updateSubscriptionStatus('spanish_newsletter', '{{ subscribed_state.${ 552354e8-2192-4bbc-b3eb-83723be5c183 } }}');
+
+  function updateValue(checkbox) {
+    if (checkbox.checked) {
+      checkbox.value = 'opted_in';
+    } else {
+      checkbox.value = 'unsubscribed';
+    }
+  }
 </script>
 
 </html>
