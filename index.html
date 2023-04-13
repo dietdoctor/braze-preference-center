@@ -38,20 +38,13 @@
     <ul style="display: flex; flex-direction: column; padding: 0;">
 
       <!-- Global -->
-      <!-- <li
+      <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="email_global">Global Subscription State: </label>
         <select id="email_global" name="{% form_field_name :email_global_state %}">
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
-      </li> -->
-
-      <li
-        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;"
-        name='{% form_field_name :email_global_state %}'>
-        <label for="email_global">Global Subscription State: </label>
-        <input type='checkbox' id='email_global' onchange='updateValue(this)'>
       </li>
 
       <!-- English -->
@@ -116,6 +109,16 @@
           <option value="unsubscribed">Unsubscribed</option>
         </select>
       </li>
+
+
+
+      <!-- <li
+style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;"
+>
+<label for="email_global">Global Subscription State: </label>
+<input type='checkbox' id='email_global' onchange='updateValue(this)' name='{% form_field_name :email_global_state %}'>
+</li> -->
+
 
     </ul>
 
@@ -187,13 +190,13 @@
   // Spanish
   updateSubscriptionStatus('spanish_newsletter', '{{ subscribed_state.${ 552354e8-2192-4bbc-b3eb-83723be5c183 } }}');
 
-  function updateValue(checkbox) {
-    if (checkbox.checked) {
-      checkbox.value = 'opted_in';
-    } else {
-      checkbox.value = 'unsubscribed';
-    }
-  }
+//   function updateValue(checkbox) {
+//   if (checkbox.checked) {
+//     checkbox.value = 'opted_in';
+//   } else {
+//     checkbox.value = 'unsubscribed';
+//   }
+// }
 </script>
 
 </html>
