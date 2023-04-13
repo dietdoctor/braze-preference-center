@@ -39,14 +39,14 @@
     <ul style="display: flex; flex-direction: column; padding: 0;">
 
       <!-- Global -->
-      <li
+      <!-- <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
         <label for="email_global">Global Subscription State: </label>
         <select id="email_global" name="{% form_field_name :email_global_state %}">
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
-      </li>
+      </li> -->
 
       <!-- English -->
       <li
@@ -149,7 +149,7 @@ style="display: flex; flex-direction: row; justify-items: center; justify-conten
   }
 
   // Global
-  updateSubscriptionStatus('email_global', '{{ subscribed_state.${ email_global } }}');
+  // updateSubscriptionStatus('email_global', '{{ subscribed_state.${ email_global } }}');
 
   // English
   updateSubscriptionStatus('english_newsletter', '{{ subscribed_state.${ 84e6f8c3-a99a-4da8-9e16-9207785a7a44 } }}');
