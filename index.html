@@ -105,15 +105,15 @@
         <!-- Spanish -->
       <li
         style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
-        <label for="spanish_newsletter">Spanish - Newsletter: </label>
-        <select id="spanish_newsletter"
-          name="{% form_field_name :subscription_group 552354e8-2192-4bbc-b3eb-83723be5c183 %}">
+        <label for="552354e8-2192-4bbc-b3eb-83723be5c183">Spanish - Newsletter: </label>
+        <select id="552354e8-2192-4bbc-b3eb-83723be5c183"
+          name="{% form_field_name :subscription_group {{${user_id}}} %}">
           <option value="opted_in">Subscribed</option>
           <option value="unsubscribed">Unsubscribed</option>
         </select>
       </li>
 
-      {{${user_id}}}
+
 
       <!-- <li
 style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;"
@@ -165,7 +165,7 @@ style="display: flex; flex-direction: row; justify-items: center; justify-conten
   updateSubscriptionStatus('swedish_program_diabetes', '{{ subscribed_state.${ b0907bac-b00c-4834-99b3-35d42445c496 } }}');
 
   // Spanish
-  updateSubscriptionStatus('spanish_newsletter', '{{ subscribed_state.${ 552354e8-2192-4bbc-b3eb-83723be5c183 } }}');
+  updateSubscriptionStatus('552354e8-2192-4bbc-b3eb-83723be5c183', '{{ subscribed_state.${ 552354e8-2192-4bbc-b3eb-83723be5c183 } }}');
 
 //   function updateValue(checkbox) {
 //   if (checkbox.checked) {
