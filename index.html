@@ -139,10 +139,17 @@ style="display: flex; flex-direction: row; justify-items: center; justify-conten
     var element = document.getElementById(elementId);
 
     if (element) {
-      if (status === 'subscribed' || status === 'opted_in') {
+      if (status === 'subscribed') {
+        element.value = 'subscribed';
+        element.checked = true;
+      }
+
+      else if (status === 'opted_in') {
         element.value = 'opted_in';
         element.checked = true;
-      } else {
+      }
+
+      else {
         element.value = 'unsubscribed';
         element.checked = false;
       }
