@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
   <meta name='robots' content='noindex'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta charset='UTF-8'>
   <title>Diet Doctor Communication Preference Center</title>
   <link href='https://fonts.googleapis.com/css2?family=Inter&display=swap' rel='stylesheet'>
   <style>
@@ -34,17 +35,17 @@
 
   <h1>Diet Doctor<br>Communication Preference Center</h1>
 
-  <form action="{{preference_center_submit_url}}" method='POST' accept-charset='UTF-8'>
+  <form action='{{preference_center_submit_url}}' method='POST' accept-charset='UTF-8'>
 
-    <ul style="display: flex; flex-direction: column; padding: 0;">
+    <ul style='display: flex; flex-direction: column; padding: 0;'>
 
       <!-- Global -->
       <li
-        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem; display: none;">
-        <label for="email_global">Global Subscription State: </label>
-        <select id="email_global" name="{% form_field_name :email_global_state %}">
-          <option value="opted_in">Subscribed</option>
-          <option value="unsubscribed">Unsubscribed</option>
+        style='display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem; display: none;'>
+        <label for='email_global'>Global Subscription State: </label>
+        <select id='email_global' name='{% form_field_name :email_global_state %}'>
+          <option value='opted_in'>Subscribed</option>
+          <option value='unsubscribed'>Unsubscribed</option>
         </select>
       </li>
 
@@ -52,79 +53,79 @@
 
       <!-- English -->
       <li
-        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
-        <label for="english_newsletter">English - Newsletter: </label>
-        <select id="english_newsletter"
-          name="{% form_field_name :subscription_group 84e6f8c3-a99a-4da8-9e16-9207785a7a44 %}">
-          <option value="subscribed">Subscribed</option>
-          <option value="unsubscribed">Unsubscribed</option>
+        style='display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;'>
+        <label for='english_newsletter'>English - Newsletter: </label>
+        <select id='english_newsletter'
+          name='{% form_field_name :subscription_group 84e6f8c3-a99a-4da8-9e16-9207785a7a44 %}'>
+          <option value='subscribed'>Subscribed</option>
+          <option value='unsubscribed'>Unsubscribed</option>
         </select>
       </li>
 
       <li
-        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
-        <label for="english_program_diabetes">English - Program - Diabetes: </label>
-        <select id="english_program_diabetes"
-          name="{% form_field_name :subscription_group 3d5e83eb-bbbe-4f92-b7ad-a1e1f82d7129 %}">
-          <option value="subscribed">Subscribed</option>
-          <option value="unsubscribed">Unsubscribed</option>
+        style='display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;'>
+        <label for='english_program_diabetes'>English - Program - Diabetes: </label>
+        <select id='english_program_diabetes'
+          name='{% form_field_name :subscription_group 3d5e83eb-bbbe-4f92-b7ad-a1e1f82d7129 %}'>
+          <option value='subscribed'>Subscribed</option>
+          <option value='unsubscribed'>Unsubscribed</option>
         </select>
       </li>
 
       <li
-        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
-        <label for="english_program_new_me_reset">English - Program - New Me Reset: </label>
-        <select id="english_program_new_me_reset"
-          name="{% form_field_name :subscription_group 42ea2104-2eee-4be0-a205-6d1261c60a8e %}">
-          <option value="subscribed">Subscribed</option>
-          <option value="unsubscribed">Unsubscribed</option>
+        style='display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;'>
+        <label for='english_program_new_me_reset'>English - Program - New Me Reset: </label>
+        <select id='english_program_new_me_reset'
+          name='{% form_field_name :subscription_group 42ea2104-2eee-4be0-a205-6d1261c60a8e %}'>
+          <option value='subscribed'>Subscribed</option>
+          <option value='unsubscribed'>Unsubscribed</option>
         </select>
         </div>
 
         <!-- Swedish -->
       <li
-        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
-        <label for="swedish_newsletter">Swedish (Svenska) - Newsletter (Nyhetsbrev): </label>
-        <select id="swedish_newsletter"
-          name="{% form_field_name :subscription_group c25c484c-7848-4a94-91e3-31619e656c69 %}">
-          <option value="subscribed">Subscribed</option>
-          <option value="unsubscribed">Unsubscribed</option>
+        style='display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;'>
+        <label for='swedish_newsletter'>Swedish (Svenska) - Newsletter (Nyhetsbrev): </label>
+        <select id='swedish_newsletter'
+          name='{% form_field_name :subscription_group c25c484c-7848-4a94-91e3-31619e656c69 %}'>
+          <option value='subscribed'>Subscribed</option>
+          <option value='unsubscribed'>Unsubscribed</option>
         </select>
         </div>
 
       <li
-        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
-        <label for="swedish_program_diabetes">Swedish (Svenska) - Program - Diabetes: </label>
-        <select id="swedish_program_diabetes"
-          name="{% form_field_name :subscription_group b0907bac-b00c-4834-99b3-35d42445c496 %}">
-          <option value="subscribed">Subscribed</option>
-          <option value="unsubscribed">Unsubscribed</option>
+        style='display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;'>
+        <label for='swedish_program_diabetes'>Swedish (Svenska) - Program - Diabetes: </label>
+        <select id='swedish_program_diabetes'
+          name='{% form_field_name :subscription_group b0907bac-b00c-4834-99b3-35d42445c496 %}'>
+          <option value='subscribed'>Subscribed</option>
+          <option value='unsubscribed'>Unsubscribed</option>
         </select>
         </div>
 
         <!-- Spanish -->
       <li
-        style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;">
-        <label for="spanish_newsletter">Spanish (Español) - Newsletter (Boletín): </label>
-        <select id="spanish_newsletter"
-          name="{% form_field_name :subscription_group 552354e8-2192-4bbc-b3eb-83723be5c183 %}">
-          <option value="subscribed">Subscribed</option>
-          <option value="unsubscribed">Unsubscribed</option>
+        style='display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;'>
+        <label for='spanish_newsletter'>Spanish (Español) - Newsletter (Boletín): </label>
+        <select id='spanish_newsletter'
+          name='{% form_field_name :subscription_group 552354e8-2192-4bbc-b3eb-83723be5c183 %}'>
+          <option value='subscribed'>Subscribed</option>
+          <option value='unsubscribed'>Unsubscribed</option>
         </select>
       </li>
 
 
 
       <!-- <li
-style="display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;"
+style='display: flex; flex-direction: row; justify-items: center; justify-content: space-between; margin-top: 1rem;'
 >
-<label for="email_global">Global Subscription State: </label>
+<label for='email_global'>Global Subscription State: </label>
 <input type='checkbox' id='email_global' onchange='updateValue(this)' name='{% form_field_name :email_global_state %}'>
 </li> -->
 
     </ul>
 
-    <input type="submit" value="Save Preferences" style='font-size: 1.6rem; margin-top: 4px;'>
+    <input type='submit' value='Save Preferences' style='font-size: 1.6rem; margin-top: 4px;'>
     <br>
   </form>
 
@@ -133,8 +134,8 @@ style="display: flex; flex-direction: row; justify-items: center; justify-conten
 
 <script>
   function updateSubscriptionStatus(elementId, status) {
-    console.log("elementId", elementId)
-    console.log("status", status)
+    console.log('elementId', elementId)
+    console.log('status', status)
 
     var element = document.getElementById(elementId);
 
